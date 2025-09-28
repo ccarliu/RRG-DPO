@@ -3,3 +3,5 @@ The implementation of paper <RRG-DPO: Direct Preference Optimization for Clinica
 We use R2Gen-main as an example to show how to inject our proposed RRG-DPO to a report generation for post-training.
 
 ### TODO: the preference data will be upload in sereval days.
+
+## If you have any questions, please do not hesitate to contact liuhong@stu.xmu.edu.cn
