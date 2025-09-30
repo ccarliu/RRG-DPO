@@ -14,10 +14,11 @@ def parse_agrs():
     parser = argparse.ArgumentParser()
 
     # Data input settings
-    parser.add_argument('--image_dir', type=str, default='/apdcephfs_cq10/share_1290796/lh/dataset/mimic_cxr/images', help='the path to the directory containing the data.')
-    parser.add_argument('--ann_path', type=str, default='/apdcephfs_cq10/share_1290796/lh/RG2D/PromptMRG-main/data/mimic_cxr/mimic_annotation_promptmrg.json', help='the path to the directory containing the data.')
-    parser.add_argument('--retrieved_id', type=str, default='/apdcephfs_cq10/share_1290796/lh/RG2D/EKAGen-main/retrieved_id.npz', help='the path to the file containing the retrieved id.')
-    parser.add_argument('--setence_label', type=str, default='/apdcephfs_cq10/share_1290796/lh/RG2D/PromptMRG-main/results/setence_label.pkl', help='the path to the file containing sentence level label by Chexbert.')
+    parser.add_argument('--image_dir', type=str, default='../dataset/mimic_cxr/images', help='the path to the directory containing the data.')
+    parser.add_argument('--ann_path', type=str, default='../dataset/mimic_cxr/mimic_annotation_promptmrg.json', help='the path to the directory containing the data.')
+    parser.add_argument('--retrieved_id', type=str, default='../dataset/mimic_cxr/retrieved_id.npz', help='the path to the file containing the retrieved id.')
+    parser.add_argument('--setence_label', type=str, default='../dataset/mimic_cxr/setence_label.pkl', help='the path to the file containing sentence level label by Chexbert.')
+    parser.add_argument('--checkpoint_SFT', type=str, default='xxx', help='the path to the checkpoint trained with SFT in R2Gen.')
 
     # Data loader settings
     parser.add_argument('--dataset_name', type=str, default='mimic_cxr', choices=['iu_xray', 'mimic_cxr', 'mimic_dpo'], help='the dataset to be used.')
@@ -133,7 +134,7 @@ def main():
     lr_scheduler = build_lr_scheduler(args, optimizer)
 
     # build trainer and start to train
-    load_path = "/apdcephfs_cq10/share_1290796/lh/RG2D/R2Gen-main/results/mimic_cxr/15current_checkpoint.pth"
+    load_path = args.checkpoint_SFT
     trainer = Trainer_DPO(model, model_ref, criterion, metrics, optimizer, args, lr_scheduler, train_dataloader, val_dataloader, test_dataloader)
     trainer._resume_checkpoint(load_path)
     trainer.train()
