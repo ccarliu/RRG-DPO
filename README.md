@@ -4,11 +4,11 @@ This repository demonstrates the RRG-DPO method (from the paper "RRG-DPO: Direct
 
 ## Usage
 
-Download the preference dataset from:
+1. Download the preference dataset from:
 https://drive.google.com/file/d/13zdP6qXNaVzAWVowv7DgAdJLrJ6Em-e1/view?usp=drive_link
 
-Train the supervised fine-tuned (SFT) R2Gen model by running main.py.
+2. Train the supervised fine-tuned (SFT) R2Gen model by running main.py.
 
-Configure main_dpo.py: set the data path and model path to the locations from steps 1–2, then execute the DPO training stage.
+3. Configure main_dpo.py: set the data path and model path to the locations from steps 1–2, then execute the DPO training stage.
 
 ## If you have any questions, please do not hesitate to contact liuhong@stu.xmu.edu.cn
