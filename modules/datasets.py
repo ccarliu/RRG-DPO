@@ -112,22 +112,6 @@ class MimiccxrSingleImageDataset_DPO(BaseDataset):
             # print(cpath)
             self.sname_to_idx[cpath] = idx
 
-        # further filter:
-        # 读取保存的数据
-        with open('results/mimic_cxr/model_best_prob.pkl', 'rb') as f:
-            self.prob_results = pickle.load(f)
-
-        for i in range(len(self.examples)):
-            self.examples[i]['ids'] = tokenizer(self.examples[i]['report'])[:self.max_seq_length]
-            self.examples[i]['mask'] = [1] * len(self.examples[i]['ids'])
-
-        self.ori_example = []
-        nannot = []
-        for l in self.examples:
-            cscore = self.prob_results[l['id']]
-            self.ori_example.append(l)
-            if cscore[0]>-1.2 and cscore[1]>-1.2:
-                nannot.append(l)
 
         
         
