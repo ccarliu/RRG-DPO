@@ -5,7 +5,7 @@ This repository demonstrates the RRG-DPO method (from the paper "RRG-DPO: Direct
 ## Usage
 
 1. Download the preference dataset from:
-https://drive.google.com/file/d/13zdP6qXNaVzAWVowv7DgAdJLrJ6Em-e1/view?usp=drive_link
+[https://drive.google.com/file/d/13zdP6qXNaVzAWVowv7DgAdJLrJ6Em-e1/view?usp=drive_link](https://drive.google.com/file/d/11OrR5Vi8mA0nvXJWMdNTBRz7bUi4Jo9i/view?usp=sharing)
 
 2. Train the supervised fine-tuned (SFT) R2Gen model by running main.py.
 
