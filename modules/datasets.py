@@ -71,7 +71,7 @@ class MimiccxrSingleImageDataset_DPO(BaseDataset):
         self.ann = json.loads(open(self.ann_path, 'r').read())
 
         self.examples = self.ann[self.split]
-        
+        self.ori_example = self.examples
 
         loaded_data = np.load(args.retrieved_id)
         self.filted_name = loaded_data['filted_name']
