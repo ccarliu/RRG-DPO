@@ -11,6 +11,6 @@ This repository demonstrates the RRG-DPO method (from the paper "RRG-DPO: Direct
 
 3. Configure main_dpo.py: set the data path and model path to the locations from steps 1–2, then execute the DPO training stage.
 
-4. Configure main.py: set the checkpoint path to test and run test scripts to get the prediction results.
+4. Configure main.py: Set the checkpoint path for testing and run the test script. The prediction results will be saved as a .pkl file in the checkpoint directory.
 
 ## If you have any questions, please do not hesitate to contact liuhong@stu.xmu.edu.cn
