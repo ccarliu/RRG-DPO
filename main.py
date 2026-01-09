@@ -115,7 +115,7 @@ def main():
     optimizer = build_optimizer(args, model)
     lr_scheduler = build_lr_scheduler(args, optimizer)
 
-    args.load_path = "/apdcephfs_cq10/share_1290796/lh/RG2D/R2Gen-main/results/mimic_cxr_dpo_w_weight_ffilter_p1p2_newweight01_01/3030current_checkpoint.pth"
+    args.load_path = "./results/mimic_cxr_dpo_w_weight_ffilter_p1p2_newweight01_01/3030current_checkpoint.pth"
 
     # build trainer and start to train
     trainer = Trainer(model, criterion, metrics, optimizer, args, lr_scheduler, train_dataloader, val_dataloader, test_dataloader)
