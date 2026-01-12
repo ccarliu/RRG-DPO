@@ -9,7 +9,7 @@ This repository demonstrates the RRG-DPO method (from the paper "RRG-DPO: Direct
 
 2. Train the supervised fine-tuned (SFT) R2Gen model by running main.py.
 
-3. Configure main_dpo.py: set the data path and model path to the locations from steps 1–2, then execute the DPO training stage.
+3. Configure main_dpo.py: set the data path and model path to the locations from steps 1–2, then execute the DPO training stage (6,000–9,000 steps is enough).
 
 4. Configure main.py: Set the checkpoint path for testing and run the test script. The prediction results will be saved as a .pkl file in the checkpoint directory.
 
