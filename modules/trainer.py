@@ -267,7 +267,7 @@ class Trainer(BaseTrainer):
 
         self.lr_scheduler.step()
 
-        return log
+        #return log
 
 class Trainer_DPO(BaseTrainer):
 
